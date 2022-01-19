@@ -42,6 +42,7 @@ namespace AppServer
             });
             services.AddQuartz(q => //pri startirane na proekta proverqva papkata
                                     //s faila koqto sme zadali i vzima vsichkite csv failove
+                                    //sled proverka otivat v DatabaseTransfer klasa
             {
                 q.SchedulerId = "Scheduler-Core";
 
