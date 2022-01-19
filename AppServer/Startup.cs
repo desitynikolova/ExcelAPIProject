@@ -40,7 +40,8 @@ namespace AppServer
                 options.Scheduling.IgnoreDuplicates = true; 
                 options.Scheduling.OverWriteExistingData = true; 
             });
-            services.AddQuartz(q =>
+            services.AddQuartz(q => //pri startirane na proekta proverqva papkata
+                                    //s faila koqto sme zadali i vzima vsichkite csv failove
             {
                 q.SchedulerId = "Scheduler-Core";
 
