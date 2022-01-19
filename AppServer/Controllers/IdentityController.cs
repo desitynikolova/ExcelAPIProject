@@ -25,7 +25,7 @@ namespace AppServer.Controllers
         [AllowAnonymous]
         public IActionResult RegisterUser([FromBody] UserViewModel model)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid) //pravim validacii
             {
                 var result = Identityuser.Register(model).Result;
                 if (result.Length > 0)
@@ -43,7 +43,7 @@ namespace AppServer.Controllers
         public IActionResult Login([FromBody] UserViewModel request)
         {
             var result = Identityuser.Login(request).Result;
-            if (result.Length > 0)
+            if (result.Length > 0) //pravim validacii
             {
                 Request.Headers.Add("Authorization", result);
                 return Ok(result);
