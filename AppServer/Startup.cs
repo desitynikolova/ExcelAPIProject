@@ -9,7 +9,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using Quartz;
+using Quartz;  //za cheteneto na failove
 using Services.Implementation;
 using Services.Interfaces;
 using Services.MapperSettings;
