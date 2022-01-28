@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using AutoMapper.Configuration;
 using Date;
 using Models;
 using Quartz;
@@ -8,7 +7,6 @@ using Services.Implementation;
 using Services.Interfaces;
 using Services.ViewModels;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;

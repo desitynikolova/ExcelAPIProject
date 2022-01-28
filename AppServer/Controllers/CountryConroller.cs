@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Services.ModelServices.Interfaces;
 
 namespace AppServer.Controllers
@@ -18,7 +17,7 @@ namespace AppServer.Controllers
 
         [HttpGet]
         [Route("countries")]
-       // [AllowAnonymous]
+        // [AllowAnonymous]
         public IActionResult GetCompanies()
         {
             var result = CountryService.GetAllCountries();

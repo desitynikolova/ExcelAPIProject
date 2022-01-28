@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Quartz;  //za cheteneto na failove
@@ -37,8 +36,8 @@ namespace AppServer
             services.Configure<QuartzOptions>(Configuration.GetSection("Quartz"));
             services.Configure<QuartzOptions>(options =>
             {
-                options.Scheduling.IgnoreDuplicates = true; 
-                options.Scheduling.OverWriteExistingData = true; 
+                options.Scheduling.IgnoreDuplicates = true;
+                options.Scheduling.OverWriteExistingData = true;
             });
             services.AddQuartz(q => //pri startirane na proekta proverqva papkata
                                     //s faila koqto sme zadali i vzima vsichkite csv failove
@@ -86,7 +85,7 @@ namespace AppServer
 
             services.AddScoped<ITransfer, Transfer>();
             services.AddScoped<IFilesReader, FilesReader>();
-            services.AddScoped<IDatabaseTransfer,DatabaseTransfer>();
+            services.AddScoped<IDatabaseTransfer, DatabaseTransfer>();
 
 
             services.AddDbContext<ApplicationDbContext>();
@@ -130,11 +129,11 @@ namespace AppServer
 
             app.UseRouting();
 
-            app.Use((req,res)=>
+            app.Use((req, res) =>
                 {
                     var headers = req.Request.Headers.ToList();
                     return res.Invoke();
-                }); 
+                });
 
             app.UseAuthentication();
             app.UseAuthorization();
